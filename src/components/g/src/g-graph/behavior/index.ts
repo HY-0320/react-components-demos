@@ -1,0 +1,1 @@
+export { registerBehavior } from './registerBehavior'

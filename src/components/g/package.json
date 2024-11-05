@@ -1,0 +1,25 @@
+{
+  "name": "g",
+  "version": "0。0.1",
+  "description": "",
+  "main": "dist/g.cjs.js",
+  "types": "dist/g.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "dependencies": {
+    "@hpcc-js/wasm": "^2.13.0",
+    "@types/d3-color": "^3.0.2",
+    "d3-color": "^1.4.0",
+    "eventemitter3": "^4.0.0",
+    "gl-matrix": "^3.1.0",
+    "rbush": "^3.0.1",
+    "@antv/g-math": "0.1.7",
+    "@antv/util": "^2.0.14"
+  },
+  "devDependencies": {
+    "@types/gl-matrix": "^2.4.5",
+    "@types/rbush": "^3.0.0"
+  }
+}
