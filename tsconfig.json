@@ -2,7 +2,7 @@
   // 指定此配置文件继承自其他配置文件
   "extends": "./tsconfig.base.json",
   // 指定需要包含的文件或目录
-  "include": ["./src/**/*"],
+  "include": ["./src/**/*", "./packages/**/*"],
   // 指定编译选项
   "compilerOptions": {
     // 没啥意义，防止覆盖inputFile
