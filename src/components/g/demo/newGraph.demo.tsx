@@ -212,14 +212,14 @@ let initGraph = false
 export default () => {
   const graphRef = useRef<Graph>()
   const graphNodeDragRef = useRef<boolean>(false)
-  const graphNodeHoverRef = useRef<INode | undefined> (undefined)
+  const graphNodeHoverRef = useRef<INode | undefined>(undefined)
   const [nodeType, setNodeType] = useState<'text_node' | 'icon_node' | 'metric_node'>(
     'text_node' as any
   )
   const [layoutType, setLayoutType] = useState<any>('fdp' as any)
 
-    Shape.registerNode('circle_node_test', graphCircleNode, 'circle')
-    Shape.registerEdge('label_line_test', labelEdgeLine, 'line')
+  Shape.registerNode('circle_node_test', graphCircleNode, 'circle')
+  Shape.registerEdge('label_line_test', labelEdgeLine, 'line')
 
   useEffect(() => {
     // 初始化graphviz
@@ -240,7 +240,7 @@ export default () => {
         canvasWheelZoom: true,
         defaultNode: {
           type: 'circle_node_test',
-          nodeType: nodeType,
+          nodeType,
         },
         defaultEdge: {
           style: {
@@ -306,7 +306,7 @@ export default () => {
         }
         e.stopPropagation()
         const curNode = e.item as INode
-        console.log(graphNodeHoverRef.current?.getID() + ' ' + curNode.getID())
+        console.log(`${graphNodeHoverRef.current?.getID()  } ${  curNode.getID()}`)
         if (graphNodeHoverRef.current?.getID() !== curNode.getID()) {
           return
         }
@@ -316,8 +316,8 @@ export default () => {
           const allNodes = graphRef?.current?.getNodes() ?? []
           const edges = curNode.getEdges()
           const neighbors = getNeighborsNodes(edges, curNode)
-           // 取消当前 node 节点层级
-           curNode.setState('updateHoverNodeZIndex', false)
+          // 取消当前 node 节点层级
+          curNode.setState('updateHoverNodeZIndex', false)
           // 遍历所有节点 对非关联节点恢复
           allNodes.forEach((node) => {
             if (
@@ -430,7 +430,7 @@ export default () => {
           fitView
         </button>
       </div>
-      <div id="graphdemo3" style={{ border: '1px solid' }}></div>
+      <div id="graphdemo3" style={{ border: '1px solid' }} />
     </>
   )
 }
